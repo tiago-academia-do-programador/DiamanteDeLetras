@@ -28,7 +28,8 @@ namespace DiamanteDeLetras.ConsoleApp
                     break;
             }
 
-            int tamanhoInicialEspacosExterior = (meioDoDiamante - 1) / 2;
+            int tamanhoInicialEspacosExterior = (meioDoDiamante - letraA);
+            //int tamanhoInicialEspacosExterior = (meioDoDiamante - 1) / 2;
             int tamanhoInicialEspacosInterior = -1;
             
             Console.WriteLine();
