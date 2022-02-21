@@ -9,7 +9,6 @@ namespace DiamanteDeLetras.ConsoleApp
             int letraA = 'A';
 
             int meioDoDiamante;
-
             while (true)
             {
                 Console.Write("Digite a letra que estará no meio do diamante: ");
@@ -28,23 +27,29 @@ namespace DiamanteDeLetras.ConsoleApp
                     break;
             }
 
-            int tamanhoInicialEspacosExterior = (meioDoDiamante - letraA);
+            int tamanhoInicialEspacosExterior = meioDoDiamante - letraA;
             int tamanhoInicialEspacosInterior = -1;
             
             Console.WriteLine();
 
+            #region Parte Superior do Diamante
+
             for (int i = letraA; i < meioDoDiamante; i++)
             {
+                // Desenhando espaços do exterior do diamante
                 for (int j = 0; j < tamanhoInicialEspacosExterior; j++)
                     Console.Write(" ");
 
                 char letraAtual = Convert.ToChar(i);
 
+                // Desenhando primeira letra
                 Console.Write(letraAtual);
 
+                // Desenhando espaços do interior
                 for (int k = 0; k < tamanhoInicialEspacosInterior; k++)
                     Console.Write(" ");
 
+                // Desenhando segunda letra
                 if (i != letraA)
                     Console.Write(letraAtual);
 
@@ -54,18 +59,26 @@ namespace DiamanteDeLetras.ConsoleApp
                 tamanhoInicialEspacosInterior += 2;
             }
 
+            #endregion
+
+            #region Parte Inferior do Diamante
+
             for (int i = meioDoDiamante; i >= letraA; i--)
             {
+                // Desenhando espaços do exterior do diamante
                 for (int j = 0; j < tamanhoInicialEspacosExterior; j++)
                     Console.Write(" ");
 
                 char letraAtual = Convert.ToChar(i);
 
+                // Desenhando primeira
                 Console.Write(letraAtual);
 
+                // Desenhando espaços do interior
                 for (int k = 0; k < tamanhoInicialEspacosInterior; k++)
                     Console.Write(" ");
 
+                // Desenhando segunda letra
                 if (i != letraA)
                     Console.Write(letraAtual);
 
@@ -75,7 +88,9 @@ namespace DiamanteDeLetras.ConsoleApp
                 tamanhoInicialEspacosInterior -= 2;
             }
 
-            Console.ReadLine();
+            #endregion
+
+            Console.ReadKey();
         }
     }
 }
